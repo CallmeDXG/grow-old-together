@@ -1,0 +1,287 @@
+<title>中国式家长调研报告</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<style>
+:root {
+  --bg: #faf8f5;
+  --bg-elevated: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #7a7a7a;
+  --accent: #c0392b;
+  --accent-soft: #f8e8e6;
+  --border: #e8e4df;
+  --surface-alt: #f0ece7;
+  --ink-wash: rgba(26, 26, 26, 0.04);
+  --serif: 'Noto Serif SC', 'Songti SC', serif;
+  --sans: 'Noto Sans SC', 'PingFang SC', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1a1816;
+    --bg-elevated: #242220;
+    --text-primary: #e8e4df;
+    --text-secondary: #b0aaa2;
+    --text-muted: #7a746c;
+    --accent: #e74c3c;
+    --accent-soft: #2d1f1e;
+    --border: #3a3632;
+    --surface-alt: #2a2724;
+    --ink-wash: rgba(232, 228, 223, 0.03);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1a1816;
+  --bg-elevated: #242220;
+  --text-primary: #e8e4df;
+  --text-secondary: #b0aaa2;
+  --text-muted: #7a746c;
+  --accent: #e74c3c;
+  --accent-soft: #2d1f1e;
+  --border: #3a3632;
+  --surface-alt: #2a2724;
+  --ink-wash: rgba(232, 228, 223, 0.03);
+}
+body {
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  background: var(--bg);
+  margin: 0; padding: 0;
+}
+.page { max-width: 860px; margin: 0 auto; padding: 60px 24px 80px; }
+.hero { text-align: center; padding: 40px 0 60px; border-bottom: 1px solid var(--border); margin-bottom: 48px; }
+.hero-label { font-weight: 500; font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.hero h1 { font-family: var(--serif); font-weight: 900; font-size: clamp(32px, 5vw, 48px); line-height: 1.2; margin: 0 0 12px; text-wrap: balance; }
+.hero-sub { font-size: 18px; color: var(--text-secondary); margin: 0; }
+.hero-meta { margin-top: 24px; font-size: 13px; color: var(--text-muted); }
+h2 { font-family: var(--serif); font-weight: 700; font-size: 24px; margin: 56px 0 20px; padding-bottom: 8px; border-bottom: 2px solid var(--accent); display: inline-block; }
+h3 { font-weight: 700; font-size: 17px; margin: 32px 0 12px; }
+p { margin: 0 0 16px; color: var(--text-secondary); }
+.table-wrap { overflow-x: auto; margin: 16px 0 24px; border-radius: 6px; border: 1px solid var(--border); }
+table { width: 100%; border-collapse: collapse; font-size: 14px; font-variant-numeric: tabular-nums; }
+thead { background: var(--surface-alt); }
+th { font-weight: 500; text-align: left; padding: 10px 14px; font-size: 13px; letter-spacing: 0.02em; white-space: nowrap; }
+td { padding: 10px 14px; border-top: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; }
+.highlight-box { background: var(--accent-soft); border-left: 3px solid var(--accent); padding: 16px 20px; margin: 20px 0; border-radius: 0 6px 6px 0; }
+.highlight-box p { margin: 0; font-size: 15px; color: var(--text-primary); }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0 28px; }
+.card { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+.card-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+.card-body { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.flow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 16px 0 24px; font-size: 14px; }
+.flow-step { background: var(--surface-alt); border: 1px solid var(--border); padding: 8px 14px; border-radius: 6px; font-weight: 500; white-space: nowrap; }
+.flow-arrow { color: var(--accent); font-size: 18px; }
+ul, ol { padding-left: 20px; margin: 8px 0 16px; }
+li { margin-bottom: 6px; color: var(--text-secondary); font-size: 15px; }
+li strong { color: var(--text-primary); }
+.compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0 28px; }
+@media (max-width: 600px) { .compare { grid-template-columns: 1fr; } }
+.compare-col { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 20px; }
+.compare-col h4 { margin: 0 0 12px; color: var(--accent); font-weight: 700; font-size: 15px; }
+.compare-col ul { margin: 0; padding-left: 16px; }
+.action-list { counter-reset: action; list-style: none; padding: 0; margin: 20px 0; }
+.action-list li { counter-increment: action; position: relative; padding-left: 48px; margin-bottom: 20px; font-size: 15px; }
+.action-list li::before { content: counter(action); position: absolute; left: 0; top: 0; width: 32px; height: 32px; background: var(--accent); color: #fff; font-weight: 700; font-size: 14px; display: flex; align-items: center; justify-content: center; border-radius: 50%; }
+.divider { height: 1px; background: var(--border); margin: 48px 0; }
+</style>
+
+<div class="page">
+
+<div class="hero">
+  <div class="hero-label">竞品调研 · Game Analysis</div>
+  <h1>《中国式家长》深度拆解<br>与《白头偕老》开发对标</h1>
+  <p class="hero-sub">从 Steam 爆款到你的游戏：需要做什么、怎么做</p>
+  <p class="hero-meta">调研对象: Chinese Parents · Steam · 2018 · 280万+销量 · 93% 好评</p>
+</div>
+
+<h2>一、游戏基本面</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>项目</th><th>详情</th></tr></thead>
+<tbody>
+<tr><td><strong>开发商</strong></td><td>墨鱼玩游戏（2-3人核心团队）</td></tr>
+<tr><td><strong>发行商</strong></td><td>椰岛游戏</td></tr>
+<tr><td><strong>上线时间</strong></td><td>2018年9月 (Steam/WeGame)</td></tr>
+<tr><td><strong>平台</strong></td><td>Steam / WeGame / Switch / iOS / Android</td></tr>
+<tr><td><strong>售价</strong></td><td>¥36-50，常年7折促销</td></tr>
+<tr><td><strong>累计销量</strong></td><td>全球 280万+ 份（截至2020年6月）</td></tr>
+<tr><td><strong>Steam评价</strong></td><td>特别好评 (93%)</td></tr>
+<tr><td><strong>单次游玩时长</strong></td><td>3-5小时/代</td></tr>
+<tr><td><strong>引擎</strong></td><td>Unity 2D</td></tr>
+<tr><td><strong>系统要求</strong></td><td>极低（Pentium III 即可）</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="highlight-box">
+<p><strong>关键洞察：</strong>技术门槛极低的2D养成游戏，靠精准的文化共鸣 + 数据驱动设计，做到百万级销量。你的《白头偕老》有同等潜力。</p>
+</div>
+
+<h2>二、核心玩法循环</h2>
+<p>模拟中国孩子从出生到高考（18岁）的成长。<strong>回合制</strong>结构，共 <strong>48个回合</strong>。</p>
+
+<h3>每回合流程</h3>
+<div class="flow">
+  <span class="flow-step">安排日程</span><span class="flow-arrow">→</span>
+  <span class="flow-step">挖脑洞小游戏</span><span class="flow-arrow">→</span>
+  <span class="flow-step">随机事件</span><span class="flow-arrow">→</span>
+  <span class="flow-step">面子对决</span><span class="flow-arrow">→</span>
+  <span class="flow-step">回合结算</span>
+</div>
+
+<h3>核心张力</h3>
+<div class="card-grid">
+  <div class="card"><div class="card-title">父母满意度 vs 孩子压力</div><div class="card-body">学习提升满意度，但压力过高导致崩溃。玩家在两端走钢丝。</div></div>
+  <div class="card"><div class="card-title">学习成绩 vs 兴趣特长</div><div class="card-body">全力学习能上好大学，但可能错过独特的艺术/体育结局。</div></div>
+  <div class="card"><div class="card-title">短期回报 vs 长期积累</div><div class="card-body">娱乐减压立竿见影，但拖慢属性成长，影响最终结局。</div></div>
+</div>
+
+<h2>三、系统详细拆解</h2>
+
+<h3>3.1 属性系统</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>核心属性</th><th>影响</th><th>附加属性</th><th>作用</th></tr></thead>
+<tbody>
+<tr><td><strong>智商</strong></td><td>学习效率、理科</td><td><strong>面子</strong></td><td>面子对决攻击力</td></tr>
+<tr><td><strong>情商</strong></td><td>社交、人际</td><td><strong>压力</strong></td><td>过高→崩溃事件</td></tr>
+<tr><td><strong>体魄</strong></td><td>体育、健康</td><td><strong>满意度</strong></td><td>零花钱和自由度</td></tr>
+<tr><td><strong>记忆力</strong></td><td>文科、知识</td><td><strong>魅力</strong></td><td>社交和恋爱</td></tr>
+<tr><td><strong>想象力</strong></td><td>艺术、创造</td><td></td><td></td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>3.2 挖脑洞（核心小游戏）</h3>
+<ul>
+  <li>网格棋盘上散布不同颜色属性碎片（黄=智商，粉=情商，绿=体魄，蓝=记忆力，紫=想象力）</li>
+  <li>点击碎片激活连锁，有限行动次数内最大化收益</li>
+  <li>特殊碎片：悟性（解锁技能）、减压、道具</li>
+  <li><strong>每回合必做</strong>——保证交互节奏感</li>
+</ul>
+
+<h3>3.3 日程安排</h3>
+<p>每回合 <strong>6个行动槽位</strong>：学习(各科) / 才艺(钢琴/画画) / 娱乐(减压) / 体育 / 社交。高端活动需悟性解锁。</p>
+
+<h3>3.4 面子对决</h3>
+<p>回合制卡牌战。亲戚聚会时触发，双方出"成就牌"比面子值。日常积累的才艺/成绩转化为战斗卡牌。</p>
+
+<h3>3.5 社交 + 恋爱</h3>
+<p>14位可交往角色（7男7女），好感度系统，毕业前可告白，影响结局和下一代。</p>
+
+<h3>3.6 结局系统</h3>
+<p><strong>100+种职业结局</strong>（院士→网红→快递员），需要不同属性组合达到阈值。高考分数+属性+技能综合判定。</p>
+
+<h3>3.7 代际传承（杀手锏）</h3>
+<div class="highlight-box">
+<p>通关后角色成为下一代家长。属性/声望传递给下一代起点，Roguelike式渐进解锁。多周目让更高结局逐渐可能。</p>
+</div>
+
+<h2>四、玩家评价</h2>
+<div class="compare">
+  <div class="compare-col">
+    <h4>玩家爱的</h4>
+    <ul>
+      <li><strong>文化共鸣</strong>——"太真实了"</li>
+      <li><strong>幽默讽刺</strong>——Steam标签: "Psychological Horror"</li>
+      <li><strong>高重玩性</strong>——100+结局+代际</li>
+      <li><strong>轻量碎片化</strong>——3-5小时/局</li>
+      <li><strong>情感共鸣</strong>——唤起童年回忆</li>
+    </ul>
+  </div>
+  <div class="compare-col">
+    <h4>玩家批评的</h4>
+    <ul>
+      <li><strong>后期重复</strong>——多周目循环枯燥</li>
+      <li><strong>随机性强</strong>——事件触发太随机</li>
+      <li><strong>挖脑洞疲劳</strong>——每回合强制做</li>
+      <li><strong>平衡性差</strong>——部分路线过强/弱</li>
+      <li><strong>Bug</strong>——偶发优化问题</li>
+    </ul>
+  </div>
+</div>
+
+<h2>五、《白头偕老》vs《中国式家长》</h2>
+<div class="table-wrap">
+<table>
+<thead><tr><th>维度</th><th>中国式家长</th><th>白头偕老</th></tr></thead>
+<tbody>
+<tr><td><strong>时间跨度</strong></td><td>出生→18岁</td><td>18岁→75岁</td></tr>
+<tr><td><strong>核心矛盾</strong></td><td>父母期望 vs 孩子自由</td><td>经济压力 vs 婚姻稳定</td></tr>
+<tr><td><strong>视角</strong></td><td>家长视角（养孩子）</td><td>第一人称（经营自己人生）</td></tr>
+<tr><td><strong>结局</strong></td><td>100+职业</td><td>白头偕老/离婚/再婚/多种人生</td></tr>
+<tr><td><strong>循环</strong></td><td>48回合制</td><td>按年推进（约50+年）</td></tr>
+<tr><td><strong>小游戏</strong></td><td>挖脑洞（每回合）</td><td>待设计</td></tr>
+<tr><td><strong>传承</strong></td><td>代际传承</td><td>性别切换双线</td></tr>
+<tr><td><strong>社交</strong></td><td>同学14人</td><td>配偶+家人+同事深度关系</td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="divider"></div>
+
+<h2>六、要做成这样，你需要做什么</h2>
+
+<h3>阶段一：核心系统搭建（2-3个月）</h3>
+<ol class="action-list">
+  <li><strong>改为回合制结构</strong><br>建议每回合=半年，共约100回合（18→68岁）。每回合固定流程：安排行动→小游戏→事件触发→数值结算。</li>
+  <li><strong>设计核心小游戏</strong><br>中国式家长的"挖脑洞"保证每回合有交互感。建议方案：<br>A)「工作效率」消除游戏（决定收入/晋升）<br>B)「沟通博弈」对话小游戏（决定关系变化）<br>C)「时间分配」拖拽排列（决定资源分配）</li>
+  <li><strong>日程安排界面</strong><br>每回合6-8个时间槽：工作/副业/陪伴家人/社交/自我提升/休息。不同组合影响收入、关系、健康。</li>
+  <li><strong>结局判定系统</strong><br>30-50种结局，YAML配置表管理，明确数值阈值条件。</li>
+</ol>
+
+<h3>阶段二：内容填充（4-6个月，最重）</h3>
+<ol class="action-list">
+  <li><strong>事件池：500+条事件</strong><br>按阶段(婚前/新婚/育儿/中年/老年) × 情境(职场/家庭/社交)。每条含：触发条件、文本、2-4选项、数值后果。</li>
+  <li><strong>对话脚本：10万字+</strong><br>所有事件对话、配偶反应、家人互动。这是最大工作量。</li>
+  <li><strong>NPC系统：8-12位角色</strong><br>配偶候选(4-6位) + 朋友(2-3位) + 同事(2-3位)，独立好感度和专属事件线。</li>
+  <li><strong>"面子对决"对标系统</strong><br>建议：「七大姑八大姨」过年聚会——被亲戚比较，拿出"人生成就牌"对决。</li>
+</ol>
+
+<h3>阶段三：美术与UI（2-4个月）</h3>
+<ol class="action-list">
+  <li><strong>美术风格确定</strong><br>建议：写实偏插画风（适合成人婚恋题材）或像素风（成本低+怀旧）。需要：角色立绘(6-10种年龄变化) + 背景(15-20张) + UI素材。</li>
+  <li><strong>核心UI界面</strong><br>主界面(状态总览+雷达图) / 日程安排(拖拽时间槽) / 事件对话(立绘+选项) / 关系面板 / 经济面板 / 小游戏 / 结局展示。</li>
+</ol>
+
+<h3>阶段四：平衡与测试（1-2个月）</h3>
+<ol class="action-list">
+  <li><strong>数值平衡</strong><br>自动化测试跑几千次模拟，确认各结局可达性合理。</li>
+  <li><strong>防重复性设计</strong><br>事件不重复出现、不同年龄段有新机制浮现、重大选择打破循环感。</li>
+</ol>
+
+<h3>阶段五：发布（1-2个月）</h3>
+<ol class="action-list">
+  <li><strong>多平台</strong>：优先Steam+iOS+Android，华为需适配鸿蒙SDK。</li>
+  <li><strong>本地化预留</strong>：文本外置、多语言支持。</li>
+  <li><strong>DLC规划</strong>：首发核心体验，后续增加新职业/城市/角色/事件包。</li>
+</ol>
+
+<div class="divider"></div>
+
+<h2>七、引擎决策</h2>
+<div class="highlight-box">
+<p><strong>建议：Ren'Py 原型 → Unity 正式版。</strong><br>中国式家长大量UI交互+小游戏+回合制，Unity 2D更合适。当前Ren'Py版本作为剧本验证原型（已完成✓），正式版用Unity重构获得更好的交互能力。Game Studios的49个Agent完全适用。</p>
+</div>
+
+<h3>工作量预估</h3>
+<div class="table-wrap">
+<table>
+<thead><tr><th>模块</th><th>工作量</th><th>瓶颈</th></tr></thead>
+<tbody>
+<tr><td>核心系统代码</td><td>2-3个月</td><td>小游戏+日程系统</td></tr>
+<tr><td>内容策划</td><td>4-6个月</td><td>500+事件、10万字剧本</td></tr>
+<tr><td>美术资源</td><td>2-4个月</td><td>角色立绘、UI</td></tr>
+<tr><td>数值平衡</td><td>1-2个月</td><td>自动化测试+调优</td></tr>
+<tr><td>测试发布</td><td>1-2个月</td><td>多平台+商店审核</td></tr>
+<tr><td><strong>总计</strong></td><td><strong>8-14个月</strong></td><td><strong>内容是最大瓶颈</strong></td></tr>
+</tbody>
+</table>
+</div>
+
+<div class="highlight-box">
+<p><strong>最终结论：</strong>中国式家长的成功 = 精准文化洞察 × 回合制成瘾循环 × 海量内容重玩性。《白头偕老》已有前两点雏形，下一步：升级为回合制养成、加入小游戏打断节奏、用AI Agent批量生成事件池。</p>
+</div>
+
+</div>
